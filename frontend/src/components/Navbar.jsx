@@ -16,18 +16,28 @@ const handleLogout = () => {
 
     return (
 
-        <div
-            style={{
-                backgroundColor: "#0d6efd",
-                color: "white",
-                padding: "18px 30px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center"
-            }}
-        >
+       <div
+style={{
+    backgroundColor: "#0d6efd",
+    color: "white",
+    padding:"20px 35px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    boxSizing: "border-box"
+}}
+>
 
-            <h2>🏢 Smart Office Management System</h2>
+<h2
+style={{
+    margin:0,
+    fontSize:"clamp(18px,2vw,32px)",
+    whiteSpace:"normal"
+}}
+>
+🏢 Smart Office Management System
+</h2>
 
             <button
                 onClick={handleLogout}

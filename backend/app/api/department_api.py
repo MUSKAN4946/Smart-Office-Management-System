@@ -7,10 +7,17 @@ from app.schemas.department_schema import (
     DepartmentCreate,
     DepartmentResponse
 )
+
+
 from app.services.department_service import (
     create_department,
-    get_all_departments
+    get_all_departments,
+    update_department,
+    delete_department
 )
+
+
+
 
 router = APIRouter(
     prefix="/departments",
@@ -32,3 +39,31 @@ def fetch_departments(
     db: Session = Depends(get_db)
 ):
     return get_all_departments(db)
+
+
+
+@router.put("/{department_id}", response_model=DepartmentResponse)
+def edit_department(
+    department_id: int,
+    department: DepartmentCreate,
+    db: Session = Depends(get_db),
+    current_user=Depends(admin_required)
+):
+    return update_department(db, department_id, department)
+
+
+@router.delete("/{department_id}")
+def remove_department(
+    department_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(admin_required)
+):
+
+    result = delete_department(db, department_id)
+
+    if result is None:
+        return {
+            "message": "Department Not Found"
+        }
+
+    return result

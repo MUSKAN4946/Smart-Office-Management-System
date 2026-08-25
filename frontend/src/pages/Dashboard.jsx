@@ -57,34 +57,48 @@ function Dashboard() {
 
         <Sidebar />
 
-        <div
-            style={{
-                flex: 1
-            }}
-        >
+ <div
+    style={{
+        flex: 1,
+        marginLeft: "260px",
+        background: "#f4f6f9",
+        minHeight: "100vh",
+        overflowX: "hidden"
+    }}
+>
 
             <Navbar />
 
-            <div
-                style={{
-                    padding: "40px",
-                    backgroundColor: "#f4f6f9",
-                    minHeight: "100vh",
-                    maxWidth: "1200px",
-                    margin: "0 auto"
-                }}
-            >
+           <div
+    style={{
+        padding: "35px",
+        background: "#f4f6f9",
+        minHeight: "calc(100vh - 70px)",
+        width: "100%",
+        boxSizing: "border-box",
+        overflowX: "hidden"
+    }}
+>
 
 <h1
     style={{
-        marginBottom: "10px"
+        marginBottom: "8px",
+        fontSize: "42px",
+        fontWeight: "700",
+        color: "#1e293b"
     }}
 >
     Dashboard
 </h1>
 
 
-<h2>
+<h2
+    style={{
+        color: "#475569",
+        fontWeight: "500",
+        marginTop: "10px"
+    }}
+>
     Welcome, {user?.full_name} 👋
 </h2>
 
@@ -100,10 +114,10 @@ function Dashboard() {
 
 <div
     style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "20px"
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px,1fr))",
+        gap:"30px",
+        marginTop: "35px"
     }}
 >
 

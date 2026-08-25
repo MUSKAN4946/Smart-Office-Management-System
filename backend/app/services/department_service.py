@@ -22,3 +22,40 @@ def create_department(db: Session, department: DepartmentCreate):
 def get_all_departments(db: Session):
 
     return db.query(Department).all()
+
+
+def update_department(db: Session, department_id: int, department: DepartmentCreate):
+
+    existing_department = db.query(Department).filter(
+        Department.id == department_id
+    ).first()
+
+    if not existing_department:
+        return None
+
+    existing_department.department_name = department.department_name
+    existing_department.department_code = department.department_code
+    existing_department.description = department.description
+
+    db.commit()
+    db.refresh(existing_department)
+
+    return existing_department
+
+
+
+def delete_department(db: Session, department_id: int):
+
+    department = db.query(Department).filter(
+        Department.id == department_id
+    ).first()
+
+    if department:
+
+        db.delete(department)
+
+        db.commit()
+
+    return {
+        "message": "Department Deleted Successfully"
+    }

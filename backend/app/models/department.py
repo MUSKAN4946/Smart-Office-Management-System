@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String
-
 from app.database.database import Base
 
 
@@ -12,4 +11,4 @@ class Department(Base):
 
     department_code = Column(String(20), unique=True, nullable=False)
 
-    description = Column(String(255))
+    description = Column(String(255), nullable=True)

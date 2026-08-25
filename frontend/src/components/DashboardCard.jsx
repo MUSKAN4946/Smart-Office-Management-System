@@ -4,19 +4,30 @@ function DashboardCard({ title, value }) {
 
         <div
             style={{
-                width: "220px",
-                background: "white",
-                borderRadius: "15px",
-                padding: "25px",
-                textAlign: "center",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                transition: "0.3s"
+                background: "#ffffff",
+                borderRadius: "16px",
+                padding: "28px",
+                width: "100%",
+                height: "160px",
+                boxSizing: "border-box",
+
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+
+                boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
+
+                transition: "all 0.3s ease"
             }}
         >
 
             <h3
                 style={{
-                    color: "#555"
+                    margin: 0,
+                    color: "#475569",
+                    fontSize: "20px",
+                    fontWeight: "600"
                 }}
             >
                 {title}
@@ -24,8 +35,11 @@ function DashboardCard({ title, value }) {
 
             <h1
                 style={{
-                    color: "#0d6efd",
-                    fontSize: "40px"
+                    marginTop: "20px",
+                    marginBottom: 0,
+                    color: "#2563eb",
+                    fontSize: "42px",
+                    fontWeight: "700"
                 }}
             >
                 {value}
