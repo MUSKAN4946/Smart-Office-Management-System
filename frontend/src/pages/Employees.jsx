@@ -156,7 +156,14 @@ const handleDeleteEmployee = async (id) => {
 
     return (
 
-        <div style={{ padding: "30px" }}>
+        <div
+    style={{
+        padding: "30px",
+        background: "#f8fafc",
+        minHeight: "100vh",
+        boxSizing: "border-box"
+    }}
+>
 
             <h1>Employees</h1>
 

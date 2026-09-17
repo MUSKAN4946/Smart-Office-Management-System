@@ -5,10 +5,24 @@ from app.schemas.attendance_schema import AttendanceCreate
 from app.models.employee import Employee
 
 
-def create_attendance(
-    db: Session,
-    attendance: AttendanceCreate
-):
+def create_attendance(db: Session, attendance: AttendanceCreate):
+    employee = db.query(Employee).filter(
+        Employee.id == attendance.employee_id
+    ).first()
+
+    if employee is None:
+        raise ValueError("Employee ID does not exist")
+
+
+    existing_attendance = db.query(Attendance).filter(
+        Attendance.employee_id == attendance.employee_id,
+        Attendance.attendance_date == attendance.attendance_date
+    ).first()
+
+    if existing_attendance is not None:
+        raise ValueError("Attendance already exists for this employee on this date")
+
+
 
     new_attendance = Attendance(
         employee_id=attendance.employee_id,
@@ -66,3 +80,72 @@ def filter_attendance(
         )
 
     return query.all()
+
+
+
+def update_attendance(
+    db: Session,
+    attendance_id: int,
+    attendance: AttendanceCreate
+):
+
+    existing_attendance = db.query(Attendance).filter(
+        Attendance.id == attendance_id
+    ).first()
+
+    if existing_attendance is None:
+        return None
+
+    existing_attendance.employee_id = attendance.employee_id
+    existing_attendance.attendance_date = attendance.attendance_date
+    existing_attendance.check_in = attendance.check_in
+    existing_attendance.check_out = attendance.check_out
+    existing_attendance.status = attendance.status
+
+    db.commit()
+    db.refresh(existing_attendance)
+
+    return existing_attendance
+
+
+
+def delete_attendance(
+    db: Session,
+    attendance_id: int
+):
+
+    attendance = db.query(Attendance).filter(
+        Attendance.id == attendance_id
+    ).first()
+
+    if attendance is None:
+        return None
+
+    db.delete(attendance)
+    db.commit()
+
+    return attendance
+
+def update_attendance(
+    db: Session,
+    attendance_id: int,
+    attendance: AttendanceCreate
+):
+
+    existing_attendance = db.query(Attendance).filter(
+        Attendance.id == attendance_id
+    ).first()
+
+    if existing_attendance is None:
+        return None
+
+    existing_attendance.employee_id = attendance.employee_id
+    existing_attendance.attendance_date = attendance.attendance_date
+    existing_attendance.check_in = attendance.check_in
+    existing_attendance.check_out = attendance.check_out
+    existing_attendance.status = attendance.status
+
+    db.commit()
+    db.refresh(existing_attendance)
+
+    return existing_attendance

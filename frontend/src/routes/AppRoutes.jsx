@@ -4,6 +4,8 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Employees from "../pages/Employees";
 import Departments from "../pages/Departments";
+import Attendance from "../pages/Attendance";
+
 
 function AppRoutes() {
 
@@ -36,6 +38,12 @@ function AppRoutes() {
                 <Route
                     path="/departments"
                     element={<Departments />}
+                />
+
+
+                <Route
+                    path="/attendance"
+                    element={<Attendance />}
                 />
 
             </Routes>

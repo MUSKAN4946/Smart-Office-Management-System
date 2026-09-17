@@ -50,7 +50,7 @@ function Sidebar() {
                     🏢 Departments
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/attendance" style={linkStyle}>
                     📅 Attendance
                 </Link>
 
