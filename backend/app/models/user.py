@@ -14,6 +14,6 @@ class User(Base):
 
     password = Column(String(255), nullable=False)
 
-    role = Column(String(50), default="Admin")
+    role = Column(String(50), default="Employee")
 
     is_active = Column(Boolean, default=True)

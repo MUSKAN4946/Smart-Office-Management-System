@@ -54,6 +54,11 @@ function Sidebar() {
                     📅 Attendance
                 </Link>
 
+
+                <Link to="/users" style={linkStyle}>
+                    👤 User Management
+                </Link>
+
                 <Link to="#" style={linkStyle}>
                     🌴 Leaves
                 </Link>
