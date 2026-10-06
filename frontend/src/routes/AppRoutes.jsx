@@ -6,6 +6,8 @@ import Employees from "../pages/Employees";
 import Departments from "../pages/Departments";
 import Attendance from "../pages/Attendance";
 import Users from "../pages/users.jsx";
+import LeaveManagement from "../pages/LeaveManagement";
+
 
 function AppRoutes() {
     return (
@@ -18,6 +20,7 @@ function AppRoutes() {
                 <Route path="/departments" element={<Departments />} />
                 <Route path="/attendance" element={<Attendance />} />
                 <Route path="/users" element={<Users />} />
+                <Route path="/leaves" element={<LeaveManagement />} />
             </Routes>
         </BrowserRouter>
     );

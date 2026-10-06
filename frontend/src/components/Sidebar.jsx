@@ -59,7 +59,7 @@ function Sidebar() {
                     👤 User Management
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/leaves" style={linkStyle}>
                     🌴 Leaves
                 </Link>
 
