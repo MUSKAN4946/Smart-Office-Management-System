@@ -63,7 +63,7 @@ function Sidebar() {
                     🌴 Leaves
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/payroll" style={linkStyle}>
                     💰 Payroll
                 </Link>
 

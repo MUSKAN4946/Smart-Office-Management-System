@@ -7,6 +7,8 @@ import Departments from "../pages/Departments";
 import Attendance from "../pages/Attendance";
 import Users from "../pages/users.jsx";
 import LeaveManagement from "../pages/LeaveManagement";
+import PayrollManagement from "../pages/PayrollManagement";
+import Profile from "../pages/Profile";
 
 
 function AppRoutes() {
@@ -21,6 +23,8 @@ function AppRoutes() {
                 <Route path="/attendance" element={<Attendance />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/leaves" element={<LeaveManagement />} />
+                <Route path="/payroll" element={<PayrollManagement />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
     );
