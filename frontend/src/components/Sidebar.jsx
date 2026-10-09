@@ -67,15 +67,15 @@ function Sidebar() {
                     💰 Payroll
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/reports" style={linkStyle}>
                     📄 Reports
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/profile" style={linkStyle}>
                     👤 Profile
                 </Link>
 
-                <Link to="#" style={linkStyle}>
+                <Link to="/notifications" style={linkStyle}>
                     🔔 Notifications
                 </Link>
 

@@ -9,6 +9,8 @@ import Users from "../pages/users.jsx";
 import LeaveManagement from "../pages/LeaveManagement";
 import PayrollManagement from "../pages/PayrollManagement";
 import Profile from "../pages/Profile";
+import Reports from "../pages/Reports";
+import Notifications from "../pages/Notifications";
 
 
 function AppRoutes() {
@@ -25,6 +27,8 @@ function AppRoutes() {
                 <Route path="/leaves" element={<LeaveManagement />} />
                 <Route path="/payroll" element={<PayrollManagement />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/reports" element={<Reports />} />
+                <Route path="/notifications" element={<Notifications />} />
             </Routes>
         </BrowserRouter>
     );
