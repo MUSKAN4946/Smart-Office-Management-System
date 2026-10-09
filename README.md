@@ -1,206 +1,154 @@
-# 🎯 Smart Office Management System 
+# Smart Office Management System
 
-## 📌 Project Description
+A full-stack web application for managing office operations, including employees, departments, attendance, leave requests, payroll, user roles, reports, and notifications.
 
-A full-stack Smart Office Management System developed using Python, FastAPI, React, PostgreSQL, and AI-based features.
+## Project Overview
 
-## 👩‍💻 Developed By
+**Developed by:** Muskan Verma
+**Degree:** B.Tech in Computer Science & Engineering
 
-Muskan Verma
+The Smart Office Management System is designed to simplify everyday office administration through a centralized web application.
 
-## 🛠 Tech Stack
+## Technology Stack
 
-- Python
-- FastAPI
-- React
-- PostgreSQL
-- SQLAlchemy
-- JWT Authentication
-- Tailwind CSS
-- Git & GitHub
+* **Backend:** Python, FastAPI
+* **Frontend:** React.js, Vite
+* **Database:** PostgreSQL
+* **ORM:** SQLAlchemy
+* **Authentication:** JWT
+* **Styling:** Tailwind CSS and custom CSS
+* **Version Control:** Git and GitHub
 
-## Project Status
+## Features
 
-## 📊 Project Status
+* **Authentication:** JWT-based login and authentication.
+* **Employee Management:** Manage employee records and perform CRUD operations.
+* **Department Management:** Manage office departments.
+* **Attendance Management:** Track employee attendance.
+* **Leave Management:** Apply for leave and manage approval or rejection.
+* **User & Role Management:** Manage users and role-based access.
+* **Payroll Management:** Manage payroll records and net salary calculations.
+* **Dashboard:** View office statistics and summary information.
+* **Profile:** View account details.
+* **Reports:** View employee, department, payroll, and leave summaries.
+* **Notifications:** Display leave-related status updates based on existing leave records.
 
-✅ Phase 1 - Project Initialization
-
-✅ Phase 2 - Backend Setup with FastAPI
-
-✅ Phase 3 - Project Configuration
-
-✅ Phase 4 - PostgreSQL Database Integration
-
-✅ Phase 5 - Employee Management Module
-
-✅ Phase 6 - Authentication with JWT
-
-✅ Phase 7 - Attendance Management Module
-
-✅ Phase 8 - Leave Management Module
-
-✅ Phase 9 - Department Management Module
-
-✅ Phase 10 - Payroll Management Module
-
-✅ Phase 11 - Complete Employee CRUD Operations
-
-✅ Phase 12 - Dashboard Analytics Module
-
-✅ Phase 13 - Employee Search, Filter, Pagination & Sorting
-
-✅ Phase 14 - JWT Authentication & Employee CRUD Completed
-
-🚧 Phase 15 - Deployment & Interview Preparation (In Progress)
-
-## ✨ Features
-
-- 👨‍💼 Employee Management
-- 🏢 Department Management
-- 📅 Attendance Management
-- 🌴 Leave Management
-- 💰 Payroll Management
-- 📊 Dashboard Analytics
-- 🔐 JWT Authentication
-- 🗄 PostgreSQL Database
-- ⚡ FastAPI REST APIs
-- 🤖 AI Ready Architecture
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
-Smart-Office-Management-System-AI/
-│
+Smart-Office-Management-System/
 ├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   ├── database/
-│   │   ├── config/
-│   │   └── core/
-│   │
-│   ├── requirements.txt
-│   └── main.py
-│
+├── frontend/
+├── database/
+├── docs/
 ├── screenshots/
+├── requirements.txt
 ├── README.md
-├── LICENSE
-└── .gitignore
+└── LICENSE
 ```
 
+## Getting Started
 
+### Prerequisites
 
-## ⚙️ Installation
+Install the following before running the application:
 
-### 1️⃣ Clone the Repository
+* Python
+* Node.js and npm
+* PostgreSQL
+* Git
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/MUSKAN4946/Smart-Office-Management-System-AI.git
-```
-
-### 2️⃣ Go to Project Folder
-
-```bash
 cd Smart-Office-Management-System-AI
 ```
 
-### 3️⃣ Backend Setup
+### 2. Set up the Python environment
 
-```bash
-cd backend
-```
-
-### 4️⃣ Create Virtual Environment
+Run these commands from the project root:
 
 ```bash
 python -m venv venv
 ```
 
-### 5️⃣ Activate Virtual Environment
+Activate the environment on Windows:
 
-**Windows**
-
-```bash
-venv\Scripts\activate
+```powershell
+.\venv\Scripts\Activate.ps1
 ```
 
-### 6️⃣ Install Dependencies
+Install the backend dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 7️⃣ Start FastAPI Server
+### 3. Configure PostgreSQL
+
+* Make sure PostgreSQL is running.
+* Create or select the project database.
+* Configure the database connection using the project's existing backend configuration.
+* Keep database credentials and secret keys out of GitHub.
+
+### 4. Start the backend
+
+From the project root:
 
 ```bash
+cd backend
 uvicorn app.main:app --reload
 ```
 
-Open in browser:
+Open the API documentation:
 
-```text
 http://127.0.0.1:8000/docs
+
+### 5. Start the frontend
+
+Open a **second terminal** from the project root:
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
+Open the local frontend URL printed by Vite, usually:
 
+http://localhost:5173
 
+## Testing
 
-## 🌐 REST API Modules
+Verify the following application modules:
 
-The project currently includes the following REST APIs:
+* Authentication and user roles
+* Employee and department management
+* Attendance management
+* Leave application and status updates
+* Payroll and profile
+* Reports and notifications
 
-- 👤 User Authentication (Register/Login)
-- 👨‍💼 Employee Management
-- 🏢 Department Management
-- 📅 Attendance Management
-- 🌴 Leave Management
-- 💰 Payroll Management
-- 📊 Dashboard Analytics
+API endpoints can be inspected using FastAPI Swagger UI.
 
-All APIs are documented using **FastAPI Swagger UI**.
+## Project Status
 
-Swagger URL:
+The project has reached **Phase 49 — Reports and Notifications**. The current development work includes the modules listed above. Final end-to-end verification is the next step.
 
-```text
-http://127.0.0.1:8000/docs
-```
+## Future Enhancements
 
+Potential improvements include:
 
-## 🚀 Future Enhancements
+* AI-powered employee analytics
+* Persistent notification records and additional notification types
+* Email notifications
+* Advanced reporting and data export
+* Cloud deployment
 
-The following features are planned for future versions:
-
-- 🤖 AI-powered Employee Performance Analysis
-- 📧 Email Notification System
-- 📱 Responsive Frontend Dashboard
-- 📊 Advanced Reports & Analytics
-- ☁️ Cloud Deployment (Render / Railway / AWS)
-- 🔐 Role-Based Access Control Enhancements
-- 📈 AI-based Attendance Prediction
-- 💬 Office Chat & Notifications
-
-
-
-## 👩‍💻 Author
+## Author
 
 **Muskan Verma**
+B.Tech — Computer Science & Engineering
 
-B.Tech Computer Science & Engineering
-
-Smart Office Management System with AI
-
-
-
-## ✨ Features
-
-- JWT Authentication
-- Employee Management
-- Attendance Management
-- Leave Management
-- Payroll Management
-- Department Management
-- Dashboard Analytics
-- Office Statistics API
-- Health Check API
+GitHub: https://github.com/MUSKAN4946/Smart-Office-Management-System-AI
