@@ -1,4 +1,15 @@
+
 # Smart Office Management System
+
+
+
+C:\Users\RITES\Desktop\MyProjects\Smart-Office-Management-System
+file explorer m direct search kroge toh miljyega
+
+
+
+
+
 
 A full-stack web application for managing office operations, including employees, departments, attendance, leave requests, payroll, user roles, reports, and notifications.
 
@@ -152,3 +163,26 @@ Potential improvements include:
 B.Tech — Computer Science & Engineering
 
 GitHub: https://github.com/MUSKAN4946/Smart-Office-Management-System-AI
+
+
+
+
+
+
+
+
+
+
+PROJECT_NAME=Smart Office Management System
+PROJECT_VERSION=1.0.0
+DEBUG=True
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=smart_office_db
+DB_USER=postgres
+DB_PASSWORD=YOUR_POSTGRES_PASSWORD
+
+SECRET_KEY=eozMsPEZhyWnZ6ycr0uTqLHeCfAGvGCIpk61g6ehVaE
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30

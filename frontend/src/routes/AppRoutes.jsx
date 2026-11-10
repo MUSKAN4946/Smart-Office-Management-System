@@ -11,6 +11,7 @@ import PayrollManagement from "../pages/PayrollManagement";
 import Profile from "../pages/Profile";
 import Reports from "../pages/Reports";
 import Notifications from "../pages/Notifications";
+import Register from "../pages/Register";
 
 
 function AppRoutes() {
@@ -29,6 +30,7 @@ function AppRoutes() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/notifications" element={<Notifications />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
         </BrowserRouter>
     );
