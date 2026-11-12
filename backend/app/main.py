@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.config.settings import PROJECT_NAME, PROJECT_VERSION
+from app.config.settings import (
+    PROJECT_NAME,
+    PROJECT_VERSION,
+    FRONTEND_URLS
+)
 from app.database.database import Base, engine
 
 # Models
@@ -36,7 +40,9 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173"
+        url.strip()
+        for url in FRONTEND_URLS.split(",")
+        if url.strip()
     ],
     allow_credentials=True,
     allow_methods=["*"],
