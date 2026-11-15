@@ -1,93 +1,39 @@
+
 import { Link } from "react-router-dom";
+import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ isOpen = false, onClose = () => {} }) {
     return (
-        <div
-            style={{
-    width: "260px",
-    height: "100vh",
-    background: "#1e3a8a",
-    color: "white",
-    padding: "25px 18px",
-    position: "fixed",
-    left: 0,
-    top: 0,
-    boxSizing: "border-box",
-    overflowY: "auto",
-    overflowX: "hidden"
-}}
-        >
-            <h2
-    style={{
-        textAlign: "center",
-        marginBottom: "25px",
-        fontSize: "28px",
-        fontWeight: "bold",
-        whiteSpace: "nowrap"
-    }}
->
-    🏢 Smart Office
-</h2>
+        <>
+            {isOpen && (
+                <div
+                    className="sidebar-overlay"
+                    onClick={onClose}
+                />
+            )}
 
-            <hr
-    style={{
-        border: "1px solid rgba(255,255,255,0.2)",
-        marginBottom: "25px"
-    }}
-/>
+            <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
+                <h2 className="sidebar-title">
+                    🏢 Smart Office
+                </h2>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+                <hr className="sidebar-divider" />
 
-                <Link to="/dashboard" style={linkStyle}>
-                    📊 Dashboard
-                </Link>
-
-               <Link to="/employees" style={linkStyle}>
-                    👨 Employees
-                </Link>
-
-               <Link to="/departments" style={linkStyle}>
-                    🏢 Departments
-                </Link>
-
-                <Link to="/attendance" style={linkStyle}>
-                    📅 Attendance
-                </Link>
-
-
-                <Link to="/users" style={linkStyle}>
-                    👤 User Management
-                </Link>
-
-                <Link to="/leaves" style={linkStyle}>
-                    🌴 Leaves
-                </Link>
-
-                <Link to="/payroll" style={linkStyle}>
-                    💰 Payroll
-                </Link>
-
-                <Link to="/reports" style={linkStyle}>
-                    📄 Reports
-                </Link>
-
-                <Link to="/profile" style={linkStyle}>
-                    👤 Profile
-                </Link>
-
-                <Link to="/notifications" style={linkStyle}>
-                    🔔 Notifications
-                </Link>
-
-            </div>
-        </div>
+                <nav className="sidebar-links">
+                    <Link to="/dashboard" onClick={onClose}>📊 Dashboard</Link>
+                    <Link to="/employees" onClick={onClose}>👨 Employees</Link>
+                    <Link to="/departments" onClick={onClose}>🏢 Departments</Link>
+                    <Link to="/attendance" onClick={onClose}>📅 Attendance</Link>
+                    <Link to="/users" onClick={onClose}>👤 User Management</Link>
+                    <Link to="/leaves" onClick={onClose}>🌴 Leaves</Link>
+                    <Link to="/payroll" onClick={onClose}>💰 Payroll</Link>
+                    <Link to="/reports" onClick={onClose}>📄 Reports</Link>
+                    <Link to="/profile" onClick={onClose}>👤 Profile</Link>
+                    <Link to="/notifications" onClick={onClose}>🔔 Notifications</Link>
+                </nav>
+            </aside>
+        </>
     );
 }
-
-const linkStyle = {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "17px"
-};
 
 export default Sidebar;

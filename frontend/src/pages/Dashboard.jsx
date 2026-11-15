@@ -31,6 +31,8 @@ function Dashboard() {
 
     const [departmentData, setDepartmentData] = useState([]);
 
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
     useEffect(() => {
         loadDashboard();
     }, []);
@@ -80,30 +82,26 @@ function Dashboard() {
             }}
         >
 
-            <Sidebar />
+            <Sidebar
+    isOpen={isSidebarOpen}
+    onClose={() => setIsSidebarOpen(false)}
+/>
 
-            <div
-                style={{
-                    flex: 1,
-                    marginLeft: "260px",
-                    background: "#f4f6f9",
-                    minHeight: "100vh",
-                    overflowX: "hidden"
-                }}
-            >
+            <div className="dashboard-main">
 
-                <Navbar />
+                <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
 
-                <div
-                    style={{
-                        padding: "35px",
-                        background: "#f4f6f9",
-                        minHeight: "calc(100vh - 70px)",
-                        width: "100%",
-                        boxSizing: "border-box",
-                        overflowX: "hidden"
-                    }}
-                >
+               <div
+    className="dashboard-content"
+    style={{
+        padding: "35px",
+        background: "#f4f6f9",
+        minHeight: "calc(100vh - 70px)",
+        width: "100%",
+        boxSizing: "border-box",
+        overflowX: "hidden"
+    }}
+>
 
                     <h1
                         style={{
