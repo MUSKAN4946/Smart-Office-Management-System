@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import {
     getEmployees,
     addEmployee,
@@ -8,6 +8,8 @@ import {
 } from "../services/employeeService";
 
 function Employees() {
+
+    const navigate = useNavigate();
 
     const [employees, setEmployees] = useState([]);
 
@@ -164,6 +166,8 @@ const handleDeleteEmployee = async (id) => {
         boxSizing: "border-box"
     }}
 >
+
+
 
             <h1>Employees</h1>
 
